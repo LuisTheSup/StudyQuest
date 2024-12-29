@@ -35,8 +35,3 @@ class SQLConnection:
             self.connection.close()
         if self.cursor:
             self.cursor.close()
-
-
-with SQLConnection() as sql:
-    sql.cursor.execute("SELECT * FROM person")
-    print(sql.cursor.fetchall())
