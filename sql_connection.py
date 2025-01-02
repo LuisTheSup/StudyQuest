@@ -35,3 +35,44 @@ class SQLConnection:
             self.connection.close()
         if self.cursor:
             self.cursor.close()
+
+    def add_assignment(
+            self,
+            student_id: int,
+            name: str,
+            description: str,
+            category: str,
+            points_achieved: float,
+            total_points: float,
+            weighting: float,
+            grade: str,
+            due_date: str,
+    ):
+
+        query = """
+        INSERT INTO assignments (
+        student_id,
+        name,
+        description,
+        category,
+        points_achieved,
+        total_points,
+        weighting,
+        grade,
+        due_date
+        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, DATE %s)
+        """
+        values = (
+            student_id,
+            name,
+            description,
+            category,
+            points_achieved,
+            total_points,
+            weighting,
+            grade,
+            due_date
+        )
+        # SUBMITS and SAVES the changes
+        self.cursor.execute(query, values)
+        self.connection.commit()
