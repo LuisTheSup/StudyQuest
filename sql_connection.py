@@ -19,60 +19,25 @@ class SQLConnection:
         self.cursor = None
 
     def __enter__(self):
-        self.connection = psycopg2.connect(
-            dbname=DB_NAME,
-            user=DB_USER,
-            password=DB_PASSWORD,
-            host=DB_HOST,
-            port=DB_PORT
-        )
-        self.cursor = self.connection.cursor()
+        try:
+            self.connection = psycopg2.connect(
+                dbname=DB_NAME,
+                user=DB_USER,
+                password=DB_PASSWORD,
+                host=DB_HOST,
+                port=DB_PORT
+            )
+            self.cursor = self.connection.cursor()
 
-        return self
+            return self
+        except psycopg2.Error as e:
+            raise e # For DEVELOPMENT purposes
 
     def __exit__(self, exc_type, exc_val, exc_tb):
+        if exc_type:
+            # Log the error
+            # return exc_type
+            raise exc_val # For DEVELOPMENT purposes
+
         if self.connection:
             self.connection.close()
-        if self.cursor:
-            self.cursor.close()
-
-    def add_assignment(
-            self,
-            student_id: int,
-            name: str,
-            description: str,
-            category: str,
-            points_achieved: float,
-            total_points: float,
-            weighting: float,
-            grade: str,
-            due_date: str,
-    ):
-
-        query = """
-        INSERT INTO assignments (
-        student_id,
-        name,
-        description,
-        category,
-        points_achieved,
-        total_points,
-        weighting,
-        grade,
-        due_date
-        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, DATE %s)
-        """
-        values = (
-            student_id,
-            name,
-            description,
-            category,
-            points_achieved,
-            total_points,
-            weighting,
-            grade,
-            due_date
-        )
-        # SUBMITS and SAVES the changes
-        self.cursor.execute(query, values)
-        self.connection.commit()
