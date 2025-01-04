@@ -70,16 +70,3 @@ def read_assignments():
         query = "SELECT * FROM assignments"
         postgres.cursor.execute(query)
         return postgres.cursor.fetchall()
-
-sample_data = {
-    'student_id': 1,
-    'name': 'section 1.2 - 1.6',
-    'description': 'complete the homework over the assignment sections',
-    'category': 'Formative',
-    'points_achieved': None,
-    'total_points': 35,
-    'weighting': 1,
-    'grade': None,
-    'due_date': '2025-01-14',
-    'graded': False
-}
