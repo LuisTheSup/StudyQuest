@@ -19,6 +19,7 @@ CREATE TABLE assignments (
     weighting REAL DEFAULT 1.0,
     grade VARCHAR(3),
     due_date TIMESTAMP(0) DEFAULT (NOW() + INTERVAL '1 Week')::DATE,
+    graded BOOL NOT NULL DEFAULT FALSE,
     created_at TIMESTAMP(0) DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP(0) DEFAULT CURRENT_TIMESTAMP,
 
