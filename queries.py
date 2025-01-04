@@ -3,9 +3,9 @@ from sql_connection import SQLConnection
 
 def add_assignment(assignment_data: dict):
     """
-
-    :param assignment_data:
-    :return:
+    Adds a new assignment record to the table based on the data provided (previously validated)
+    :param assignment_data: A dictionary containing the fields and values for the new record
+    :return: None
     """
     with SQLConnection() as postgres:
         subqueries = [f"{field}" for field in assignment_data.keys()]
@@ -53,7 +53,7 @@ def read_assignment(assignment_id: int):
     """
     Read a single assignment record from the table
     :param assignment_id: The ID of the assignment to read
-    :return: None
+    :return: list[tuple]
     """
     with SQLConnection() as postgres:
         query = "SELECT * FROM assignments WHERE assignment_id = %s"
@@ -64,7 +64,7 @@ def read_assignment(assignment_id: int):
 def read_assignments():
     """
     Reads all assignment records from the table
-    :return: None
+    :return: list[tuples]
     """
     with SQLConnection() as postgres:
         query = "SELECT * FROM assignments"
