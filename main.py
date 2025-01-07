@@ -1,5 +1,3 @@
-from sql_connection import SQLConnection
-
 def main():
     pass
 
