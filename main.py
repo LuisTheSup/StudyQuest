@@ -1,3 +1,5 @@
+import db
+
 def main():
     pass
 
