@@ -135,3 +135,15 @@ def read_students():
         query = f"SELECT * FROM students"
         postgres.cursor.execute(query)
         return postgres.cursor.fetchall()
+
+
+def student_exists(student_id: int):
+    """
+    Checks whether a student exists in the table based on the id provided
+    :param student_id: The ID of the student to read
+    :return: bool
+    """
+    with SQLConnection() as postgres:
+        query = "SELECT EXISTS(SELECT 1 FROM students WHERE student_id = %s);"
+        postgres.cursor.execute(query, (student_id,))
+        return postgres.cursor.fetchone()[0]
