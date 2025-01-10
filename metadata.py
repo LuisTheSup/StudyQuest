@@ -142,6 +142,36 @@ ASSIGNMENT = {
 }
 
 STUDENT = {
+    'student_id': {
+        'datatype': int, # BIGINT
+        'required': True,
+        'unique': True,
+        'edit': False,
+        'auto_generated': True,
+        'max_length': 19, # Maximum number of digits for BIGINT
+        'format': None,
+        'key_column': [True, 'PRIMARY'],
+    },
+    'firstname': {
+        'datatype': str, # VARCHAR(100)
+        'required': True,
+        'unique': False,
+        'edit': True,
+        'auto_generated': False,
+        'max_length': 100,
+        'format': None, #TODO To be reviewed
+        'key_column': [False],
+    },
+    'lastname': {
+        'datatype': str, # VARCHAR(100)
+        'required': True,
+        'unique': False,
+        'edit': True,
+        'auto_generated': False,
+        'max_length': 100,
+        'format': None, #TODO to be reviewed
+        'key_column': [False],
+    }
 
 }
 
