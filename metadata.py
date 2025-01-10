@@ -58,6 +58,86 @@ ASSIGNMENT = {
         'max_length': None,
         'format': None,
         'key_column': [False],
+    },
+    'total_points': {
+        'datatype': int, # NUMERIC
+        'required': True,
+        'unique': False,
+        'edit': True,
+        'auto_generated': False,
+        'max_length': None, #TODO To be reviewed
+        'format': None,
+        'key_column': [False],
+    },
+    'weighting': {
+        'datatype': float, # REAL
+        'required': True,
+        'unique': False,
+        'edit': True,
+        'auto_generated': False,
+        'max_length': None, #TODO To be reviewed
+        'format': None,
+        'key_column': [False],
+    },
+    'grade': {
+        'datatype': str, # VARCHAR(3)
+        'required': False,
+        'unique': False,
+        'edit': True,
+        'auto_generated': False,
+        'max_length': 3, # Maximum number of characters
+        'format': ['A', 'B', 'C', 'D', 'F', 'NS', '-', '+'],
+        'key_column': [False],
+    },
+    'percentage': {
+        'datatype': str, # VARCHAR(6)
+        'required': True,
+        'unique': False,
+        'edit': True,
+        'auto_generated': False,
+        'max_length': None, # Maximum number of characters
+        'format': None,
+        'key_column': [False],
+    },
+    'due_date': {
+        'datatype': str, # TIMESTAMP
+        'required': False,
+        'unique': False,
+        'edit': True,
+        'auto_generated': False,
+        'max_length': None, #TODO to be reviewed
+        'format': None,
+        'key_column': [False],
+    },
+    'created_at': {
+        'datatype': str, # TIMESTAMP
+        'required': False,
+        'unique': False,
+        'edit': True,
+        'auto_generated': False,
+        'max_length': None, #TODO to be reviewed
+        'format': None,
+        'key_column': [False],
+    },
+    'updated_at': {
+        'datatype': str, # TIMESTAMP
+        'required': False,
+        'unique': False,
+        'edit': True,
+        'auto_generated': False,
+        'max_length': None, #TODO to be reviewed
+        'format': None,
+        'key_column': [False],
+    },
+    'graded': {
+        'datatype': bool,
+        'required': False,
+        'unique': False,
+        'edit': True,
+        'auto_generated': False,
+        'max_length': None, #TODO to be reviewed
+        'format': None,
+        'key_column': [False],
     }
 }
 
@@ -94,6 +174,7 @@ METADATA = {
         'total_points': {},
         'weighting': {},
         'grade': {},
+        'percentage': {},
         'due_date': {},
         'created_at': {},
         'updated_at': {},
