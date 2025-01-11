@@ -210,8 +210,8 @@ STUDENT = {
         'unique': False,
         'edit': True,
         'auto_generated': False,
-        'max_length': 10,
-        'format': ['male', 'female'], #TODO to be reviewed
+        'max_length': None,
+        'format': None,
         'key_column': [False],
     }
 
