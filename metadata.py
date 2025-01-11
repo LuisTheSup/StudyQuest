@@ -1,3 +1,5 @@
+import datetime
+
 ASSIGNMENT = {
     'assignment_id': {
         'datatype': int, # BIGINT
@@ -171,42 +173,46 @@ STUDENT = {
         'max_length': 100,
         'format': None, #TODO to be reviewed
         'key_column': [False],
+    },
+    'email': {
+        'datatype': str, # VARCHAR(255)
+        'required': True,
+        'unique': True,
+        'edit': True,
+        'auto_generated': False,
+        'max_length': 255,
+        'format': None, #TODO to be reviewed
+        'key_column': [False],
+    },
+    'phone_number': {
+        'datatype': str, # VARCHAR(30)
+        'required': False, #TODO TO be reviewed
+        'unique': True,
+        'edit': True,
+        'auto_generated': False,
+        'max_length': 30,
+        'format': None, #TODO to be reviewed
+        'key_column': [False],
+    },
+    'gender': {
+        'datatype': str, # VARCHAR(10)
+        'required': True, #TODO TO be reviewed
+        'unique': False,
+        'edit': True,
+        'auto_generated': False,
+        'max_length': 10,
+        'format': ['male', 'female'], #TODO to be reviewed
+        'key_column': [False],
+    },
+    'date_of_birth': {
+        'datatype': datetime.date, # DATE TODO To be reviewed
+        'required': True, #TODO TO be reviewed
+        'unique': False,
+        'edit': True,
+        'auto_generated': False,
+        'max_length': 10,
+        'format': ['male', 'female'], #TODO to be reviewed
+        'key_column': [False],
     }
 
 }
-
-METADATA = {
-        'assignment_id': {
-        'datatype': int,
-        'required': True,
-        'unique': True,
-        'edit': False,
-        'auto_generated': True,
-        'default_value': 'auto_increment',
-        'max_length': None,
-        'description': 'Primary key for assignments'
-        },
-        'student_id': {
-            'datatype': int,
-            'required': True,
-            'unique': True,
-            'edit': False,
-        },
-        'name': {
-            'datatype': int,
-            'required': True,
-            'unique': True,
-            'edit': False,
-        },
-        'description': {},
-        'category': {},
-        'points_achieved': {},
-        'total_points': {},
-        'weighting': {},
-        'grade': {},
-        'percentage': {},
-        'due_date': {},
-        'created_at': {},
-        'updated_at': {},
-        'graded': {}
-    }
