@@ -13,7 +13,7 @@ CREATE TABLE assignments (
     student_id BIGINT NOT NULL REFERENCES students(student_id) ON DELETE CASCADE,
     name VARCHAR(150) NOT NULL,
     description TEXT DEFAULT 'No Description',
-    category VARCHAR(12) NOT NULL CHECK ( category IN ('Formative', 'Summative') ),
+    category VARCHAR(12) NOT NULL CHECK ( category IN ('formative', 'summative') ),
     points_achieved NUMERIC CHECK ( points_achieved >= 0 ),
     total_points NUMERIC NOT NULL CHECK ( total_points > 0 ),
     weighting REAL DEFAULT 1.0,
