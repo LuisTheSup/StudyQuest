@@ -93,7 +93,7 @@ ASSIGNMENT = {
     },
     'percentage': {
         'datatype': str, # VARCHAR(6)
-        'required': True,
+        'required': False,
         'unique': False,
         'edit': True,
         'auto_generated': False,
@@ -196,7 +196,7 @@ STUDENT = {
     },
     'gender': {
         'datatype': str, # VARCHAR(10)
-        'required': True, #TODO TO be reviewed
+        'required': True,
         'unique': False,
         'edit': True,
         'auto_generated': False,
