@@ -73,7 +73,7 @@ ASSIGNMENT = {
     },
     'weighting': {
         'datatype': float, # REAL
-        'required': True,
+        'required': False,
         'unique': False,
         'edit': True,
         'auto_generated': False,
