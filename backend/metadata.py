@@ -1,8 +1,6 @@
-import datetime
-
 ASSIGNMENT = {
     'assignment_id': {
-        'datatype': int, # BIGINT
+        'datatype': 'int', # BIGINT
         'required': True,
         'unique': True,
         'edit': False,
@@ -12,7 +10,7 @@ ASSIGNMENT = {
         'key_column': [True, 'PRIMARY'],
     },
     'student_id': {
-        'datatype': int, # BIGINT
+        'datatype': 'int', # BIGINT
         'required': True,
         'unique': True,
         'edit': False,
@@ -22,7 +20,7 @@ ASSIGNMENT = {
         'key_column': [True, "FOREIGN"],
     },
     'name': {
-        'datatype': str, # VARCHAR(150)
+        'datatype': 'str', # VARCHAR(150)
         'required': True,
         'unique': False,
         'edit': True,
@@ -32,7 +30,7 @@ ASSIGNMENT = {
         'key_column': [False],
     },
     'description': {
-        'datatype': str, # TEXT
+        'datatype': 'str', # TEXT
         'required': False,
         'unique': False,
         'edit': True,
@@ -42,7 +40,7 @@ ASSIGNMENT = {
         'key_column': [False],
     },
     'category': {
-        'datatype': str, # VARCHAR(12)
+        'datatype': 'str', # VARCHAR(12)
         'required': True,
         'unique': False,
         'edit': True,
@@ -52,7 +50,7 @@ ASSIGNMENT = {
         'key_column': [False],
     },
     'points_achieved': {
-        'datatype': float, # NUMERIC TODO Needs to be reviewed further for possible switch to decimal
+        'datatype': 'float', # NUMERIC TODO Needs to be reviewed further for possible switch to decimal
         'required': False,
         'unique': False,
         'edit': True,
@@ -62,7 +60,7 @@ ASSIGNMENT = {
         'key_column': [False],
     },
     'total_points': {
-        'datatype': int, # NUMERIC
+        'datatype': 'int', # NUMERIC
         'required': True,
         'unique': False,
         'edit': True,
@@ -72,7 +70,7 @@ ASSIGNMENT = {
         'key_column': [False],
     },
     'weighting': {
-        'datatype': float, # REAL
+        'datatype': 'float', # REAL
         'required': False,
         'unique': False,
         'edit': True,
@@ -82,7 +80,7 @@ ASSIGNMENT = {
         'key_column': [False],
     },
     'grade': {
-        'datatype': str, # VARCHAR(3)
+        'datatype': 'str', # VARCHAR(3)
         'required': False,
         'unique': False,
         'edit': True,
@@ -92,7 +90,7 @@ ASSIGNMENT = {
         'key_column': [False],
     },
     'percentage': {
-        'datatype': str, # VARCHAR(6)
+        'datatype': 'str', # VARCHAR(6)
         'required': False,
         'unique': False,
         'edit': True,
@@ -102,7 +100,7 @@ ASSIGNMENT = {
         'key_column': [False],
     },
     'due_date': {
-        'datatype': str, # TIMESTAMP
+        'datatype': 'str', # TIMESTAMP
         'required': False,
         'unique': False,
         'edit': True,
@@ -112,7 +110,7 @@ ASSIGNMENT = {
         'key_column': [False],
     },
     'created_at': {
-        'datatype': str, # TIMESTAMP
+        'datatype': 'str', # TIMESTAMP
         'required': False,
         'unique': False,
         'edit': True,
@@ -122,7 +120,7 @@ ASSIGNMENT = {
         'key_column': [False],
     },
     'updated_at': {
-        'datatype': str, # TIMESTAMP
+        'datatype': 'str', # TIMESTAMP
         'required': False,
         'unique': False,
         'edit': True,
@@ -132,7 +130,7 @@ ASSIGNMENT = {
         'key_column': [False],
     },
     'graded': {
-        'datatype': bool,
+        'datatype': 'bool',
         'required': False,
         'unique': False,
         'edit': True,
@@ -145,7 +143,7 @@ ASSIGNMENT = {
 
 STUDENT = {
     'student_id': {
-        'datatype': int, # BIGINT
+        'datatype': 'int', # BIGINT
         'required': True,
         'unique': True,
         'edit': False,
@@ -155,7 +153,7 @@ STUDENT = {
         'key_column': [True, 'PRIMARY'],
     },
     'firstname': {
-        'datatype': str, # VARCHAR(100)
+        'datatype': 'str', # VARCHAR(100)
         'required': True,
         'unique': False,
         'edit': True,
@@ -165,7 +163,7 @@ STUDENT = {
         'key_column': [False],
     },
     'lastname': {
-        'datatype': str, # VARCHAR(100)
+        'datatype': 'str', # VARCHAR(100)
         'required': True,
         'unique': False,
         'edit': True,
@@ -175,7 +173,7 @@ STUDENT = {
         'key_column': [False],
     },
     'email': {
-        'datatype': str, # VARCHAR(255)
+        'datatype': 'str', # VARCHAR(255)
         'required': True,
         'unique': True,
         'edit': True,
@@ -185,7 +183,7 @@ STUDENT = {
         'key_column': [False],
     },
     'phone_number': {
-        'datatype': str, # VARCHAR(30)
+        'datatype': 'str', # VARCHAR(30)
         'required': False, #TODO TO be reviewed
         'unique': True,
         'edit': True,
@@ -195,7 +193,7 @@ STUDENT = {
         'key_column': [False],
     },
     'gender': {
-        'datatype': str, # VARCHAR(10)
+        'datatype': 'str', # VARCHAR(10)
         'required': True,
         'unique': False,
         'edit': True,
@@ -205,7 +203,7 @@ STUDENT = {
         'key_column': [False],
     },
     'date_of_birth': {
-        'datatype': datetime.date, # DATE TODO To be reviewed
+        'datatype': 'date', # DATE TODO To be reviewed
         'required': True, #TODO TO be reviewed
         'unique': False,
         'edit': True,
