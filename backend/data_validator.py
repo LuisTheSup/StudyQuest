@@ -1,5 +1,5 @@
-import metadata
-from exceptions import MissingFieldsError
+from backend import metadata
+from backend.exceptions import MissingFieldsError
 
 
 def new_assignment_data(assignment_data: dict):
