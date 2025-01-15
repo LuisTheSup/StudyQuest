@@ -1,4 +1,4 @@
-from backend.sql_connection import SQLConnection
+from sql_connection import SQLConnection
 
 # Assignment related queries
 def add_assignment(assignment_data: dict):
